@@ -1,4 +1,4 @@
-// Save the global object in a variable
+// Save global object in a variable
 var __global__ =
 (typeof globalThis !== 'undefined' && globalThis) ||
 (typeof self !== 'undefined' && self) ||
@@ -639,8 +639,7 @@ var irrelevant = (function (exports) {
 __globalThis__.fetch.ponyfill = true;
 delete __globalThis__.fetch.polyfill;
 // Choose between native implementation (__global__) or custom implementation (__globalThis__)
-// var ctx = __global__.fetch ? __global__ : __globalThis__;
-var ctx = __globalThis__ // this line disable service worker support temporarily
+var ctx = __global__.fetch ? __global__ : __globalThis__;
 exports = ctx.fetch // To enable: import fetch from 'cross-fetch'
 exports.default = ctx.fetch // For TypeScript consumers without esModuleInterop.
 exports.fetch = ctx.fetch // To enable: import {fetch} from 'cross-fetch'
