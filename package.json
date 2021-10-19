@@ -9,7 +9,7 @@
   "types": "index.d.ts",
   "scripts": {
     "prepare": "husky install",
-    "prepublish": "make build"
+    "prepublishOnly": "make build"
   },
   "lint-staged": {
     "*.js": [
