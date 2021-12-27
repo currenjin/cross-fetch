@@ -16,7 +16,14 @@
   <script src="../../../node_modules/chai/chai.js"></script>
   <script src="../../../node_modules/mocha/mocha.js"></script>
 
-  <script src="../../setup.env.js"></script>
+  <script>
+    // Enable mocha's bdd style
+    mocha.setup('bdd')
+
+    // Add chai's expect to the global scope
+    window.expect = chai.expect
+    window.assert = chai.assert
+  </script>
   <script src="../api.spec.js"></script>
   <script src="../../module-system/module.spec.js"></script>
   <!-- use native fetch -->

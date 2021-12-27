@@ -1,4 +1,4 @@
-require('../../setup.env')
+require('../setup.env')
 require('../../../polyfill')
 const { addModuleSuite, addPolyfillSuite, addNativeSuite } = require('../module.spec')
 

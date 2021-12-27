@@ -5,7 +5,7 @@ node_modules: package.json
 
 build: dist ts-specs
 
-browser:
+browser: dist
 	./bin/server --exec "npx open-cli http://localhost:8000/test/fetch-api/browser/"
 
 commitlint: node_modules
@@ -65,4 +65,7 @@ ts-specs: test/fetch-api/api.spec.js
 typecheck:
 	npx tsc --lib ES6 --noEmit index.d.ts ./test/fetch-api/api.spec.ts
 
-.PHONY: all build deploy lint test test-fetch test-fetch-browser test-fetch-whatwg test-fetch-node test-module test-module-web-cjs test-module-web-esm test-module-node-cjs test-module-node-esm test-module-react-native typecheck
+whatwg: dist
+	./bin/server --exec "npx open-cli http://localhost:8000/test/fetch-api/whatwg/"
+
+.PHONY: all build deploy lint test test-fetch test-fetch-browser test-fetch-whatwg test-fetch-node test-module test-module-web-cjs test-module-web-esm test-module-node-cjs test-module-node-esm test-module-react-native typecheck whatwg

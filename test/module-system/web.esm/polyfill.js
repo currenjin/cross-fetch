@@ -1,4 +1,4 @@
-import '../../setup.env'
+import '../setup.env'
 import '../../../polyfill'
 import { addModuleSuite, addPolyfillSuite, addNativeSuite } from '../module.spec'
 
